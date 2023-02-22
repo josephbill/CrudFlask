@@ -12,6 +12,9 @@
             <p>{{ x['created'] }}</p>
             <p>{{ x['title'] }}</p>
             <p>{{ x['content'] }}</p>
+{#             edit button link #}
+            <a href="{{ url_for('edit', id=x['id'])}}">Edit Posts</a>
+            <a href="{{ url_for('delete', id=x['id'])}}">Delete Post</a>
          </div>
 
       {% endfor %}

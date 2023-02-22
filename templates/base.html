@@ -22,10 +22,15 @@
     <nav>
         <a href="{{ url_for('index') }}">Crud App</a>
         <a href="#">About Page</a>
-        <a href="#">Create Post</a>
+        <a href="{{ url_for('create') }}">Create Post</a>
     </nav>
 
     <div class="content">
+
+        {% for message in get_flashed_messages() %}
+              <div class="alert">{{ message }}</div>
+        {% endfor %}
+
         {% block content %}{% endblock %}
     </div>
 
